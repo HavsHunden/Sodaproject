@@ -17,7 +17,7 @@ namespace Sodaproject
             //skapar 4 objekt av klassen soda. De ges namn, pris och dryckestyp
             var soda1 = new Soda("Coca Cola", "läsk", 5);
             var soda2 = new Soda("Coca Cola Zero", "lightläsk", 5);
-            var soda3 = new Soda("Hallonsoda", "läsk", 6);
+            var soda3 = new Soda("Fanta", "läsk", 6);
             var soda4 = new Soda("Bonaqua", "mineralvatten", 4);
             //de här objekten kan man sedan välja på i add_soda 
 
