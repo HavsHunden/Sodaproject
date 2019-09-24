@@ -11,22 +11,30 @@ namespace Sodaproject
         private int[] flaskor = new int[24];
         private int antal_flaskor = 0; //Håller reda på antal flaskor
 
+        //listan med läsker definieras
+        List<Soda> listan;
+
         public void Run()
         {
 
             //skapar 4 objekt av klassen soda. De ges namn, pris och dryckestyp
             var soda1 = new Soda("Coca Cola", "läsk", 5);
             var soda2 = new Soda("Coca Cola Zero", "lightläsk", 5);
-            var soda3 = new Soda("S", "läsk", 6);
+            var soda3 = new Soda("Hallonsoda", "läsk", 6);
             var soda4 = new Soda("Ramlösa", "mineralvatten", 4);
             //de här objekten kan man sedan välja på i add_soda 
-
+            
+            //skapar en lista där objekten återfinns. 
+            listan = new List<Soda>();
+            {
+                listan.Add(soda1);
+                listan.Add(soda2);
+                listan.Add(soda3);
+                listan.Add(soda4);
+            }
 
             do
             {
-
-
-
                 //En meny i vilken användaren matar in en int. 
                 Console.WriteLine("Välkommen till läskbackssimulatorn! Gör ett val");
                 Console.WriteLine("[1] Lägg till läsk");
@@ -66,12 +74,12 @@ namespace Sodaproject
         {
 
             Console.Clear();
-            //Här vill jag att namnet på soda ska skrivas ut 
+            //Namnet från listan skrivs ut för vardera läsk
             Console.WriteLine("Fyll din läskback med 25 läskflaskor. Välj en läsk åt gången:");
-            Console.WriteLine("[1] namn 1");
-            Console.WriteLine("[2] namn 2");
-            Console.WriteLine("[3] namn 3");
-            Console.WriteLine("[4] namn 4");
+            Console.WriteLine("[1]" + listan[0].GetNamn());
+            Console.WriteLine("[2]" + listan[1].GetNamn());
+            Console.WriteLine("[3]" + listan[2].GetNamn());
+            Console.WriteLine("[4]" + listan[3].GetNamn());
             //+ ett val för att slumpa läsk
 
 
@@ -85,13 +93,9 @@ namespace Sodaproject
             {
                 string str1 = Console.ReadLine(); //användarens val
                 int läskval = Convert.ToInt32(str1);//konverteras till en int då det ju är ett nummer vi får
-                if (läskval == 1)
-                {
-                    flaskor[i] = läskval;
-                }
 
-                //skriv ut namnet på läsken som har lagts till
-                Console.WriteLine("Du lade till:"); //+ drycken som lagts till);
+                //beroende på numret på läskval läggs en läsk på listan från ett givet index, in i läskbacken
+                
             }
         }
 
@@ -127,18 +131,13 @@ namespace Sodaproject
             //... går det bra att sortera efter längden på namnet istället. 
         }
 
-
-
-
-
-
-
-
     }
 
     class Soda
     {
 
+     
+        
         public string namn;
         public string dryckestyp;
         public int pris;
@@ -155,8 +154,20 @@ namespace Sodaproject
             this.v3 = v3;
         }
 
+        //nedanstående är olika metoder för att returnera namn, dryckestyp och pris
+        public string GetNamn()
+        {
+            return v1;
+        }
 
-
+        public string GetDryckestyp()
+        {
+            return v2;
+        }
+        public int GetPris()
+        {
+            return v3;
+        }
     }
 
     class Program
