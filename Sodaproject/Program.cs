@@ -18,7 +18,7 @@ namespace Sodaproject
 
             //skapar 4 objekt av klassen soda. De ges namn, pris och dryckestyp
 
-            Soda soda1 = new Soda("Coca Cola", "läsk", 5);
+           
             Soda soda2 = new Soda("Coca Cola Zero", "lightläsk", 5);
             Soda soda3 = new Soda("Hallonsoda", "läsk", 6);
             Soda soda4 = new Soda("Ramlösa", "mineralvatten", 4);
@@ -46,6 +46,7 @@ namespace Sodaproject
                     case 1:
                         //metoden add-soda anropas
                         add_soda();
+                        flaskor[0].namn;
                         break;
 
                     case 2:
@@ -82,15 +83,25 @@ namespace Sodaproject
             //kan man ha en viss siffra som egenskap och lägga i klassen soda?
 
             //Vi går igenom läskbacken och lägger till en soda i varje position
-            for (int i = 0; i < 25; i++)
+            for (int i = 0; i < 1; i++)
             {
                 //användaren skriver in ett nummer som sparas som int
                 string str1 = Console.ReadLine(); 
                 int läskval = Convert.ToInt32(str1);
 
                 //beroende på numret på läskval läggs ett objekt av soda in i läskbacken
+                switch (läskval)
+                {
+                    case 1:
 
-                //om användaren trycker 1, läggs soda1 in i läskbacken, plats 1:
+                 Soda soda1 = new Soda("Coca Cola", "läsk", 5);
+                 flaskor [i] = soda1; 
+                        break;
+
+
+                }
+
+               
                 
 
             }
@@ -137,7 +148,6 @@ namespace Sodaproject
     class Soda
     {
 
-     
         
         public string namn;
         public string dryckestyp;
