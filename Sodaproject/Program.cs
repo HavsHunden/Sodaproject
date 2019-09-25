@@ -46,7 +46,7 @@ namespace Sodaproject
                     case 1:
                         //metoden add-soda anropas
                         add_soda();
-                        flaskor[0].namn;
+                        
                         break;
 
                     case 2:
@@ -94,9 +94,9 @@ namespace Sodaproject
                 {
                     case 1:
 
-                 Soda soda1 = new Soda("Coca Cola", "läsk", 5);
-                 flaskor [i] = soda1; 
-                        break;
+                    Soda soda1 = new Soda("Coca Cola", "läsk", 5);
+                    flaskor [i] = soda1; 
+                    break;
 
 
                 }
@@ -148,36 +148,31 @@ namespace Sodaproject
     class Soda
     {
 
-        
-        public string namn;
-        public string dryckestyp;
-        public int pris;
-
         //här ska vi ha en konstruktor för var och en av variablerna
-        private string v1;
-        private string v2;
-        private int v3;
+        private string namn;
+        private string dryckestyp;
+        private int pris;
 
         public Soda(string v1, string v2, int v3)
         {
-            this.v1 = v1;
-            this.v2 = v2;
-            this.v3 = v3;
+            this.namn = v1;
+            this.dryckestyp = v2;
+            this.pris = v3;
         }
 
         //nedanstående är olika metoder för att returnera namn, dryckestyp och pris
         public string GetNamn()
         {
-            return v1;
+            return namn;
         }
 
         public string GetDryckestyp()
         {
-            return v2;
+            return dryckestyp;
         }
         public int GetPris()
         {
-            return v3;
+            return pris;
         }
     }
 
