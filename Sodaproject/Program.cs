@@ -71,10 +71,10 @@ namespace Sodaproject
             Console.Clear();
             //Namnet från listan skrivs ut för vardera läsk
             Console.WriteLine("Fyll din läskback med 25 läskflaskor. Välj en läsk åt gången:");
-            Console.WriteLine("[1]" + flaskor);
-            Console.WriteLine("[2]" + flaskor);
-            Console.WriteLine("[3]" + flaskor);
-            Console.WriteLine("[4]" + flaskor);
+            Console.WriteLine("[1] Coca cola, 5 kr");
+            Console.WriteLine("[2] Coca Cola Zero, 5 kr");
+            Console.WriteLine("[3] Hallonsoda, 6 kr");
+            Console.WriteLine("[4] Ramlösa, 4 kr");
             //+ ett val för att slumpa läsk
 
            
