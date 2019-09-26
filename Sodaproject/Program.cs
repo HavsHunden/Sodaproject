@@ -19,9 +19,9 @@ namespace Sodaproject
             //skapar 4 objekt av klassen soda. De ges namn, pris och dryckestyp
 
            
-            Soda soda2 = new Soda("Coca Cola Zero", "lightläsk", 5);
-            Soda soda3 = new Soda("Hallonsoda", "läsk", 6);
-            Soda soda4 = new Soda("Ramlösa", "mineralvatten", 4);
+          
+            
+          
             //de här objekten kan man sedan välja på i add_soda 
             
             
@@ -66,6 +66,7 @@ namespace Sodaproject
 
         public void add_soda()
         {
+            
 
             Console.Clear();
             //Namnet från listan skrivs ut för vardera läsk
@@ -76,14 +77,14 @@ namespace Sodaproject
             Console.WriteLine("[4]" + flaskor);
             //+ ett val för att slumpa läsk
 
-
+           
 
             //Det användaren skriver in är en siffra som nu ska kopplas till en dryck
             //om läskval = 1 ska soda1 läggas i sodacrate-vektorn
             //kan man ha en viss siffra som egenskap och lägga i klassen soda?
 
             //Vi går igenom läskbacken och lägger till en soda i varje position
-            for (int i = 0; i < 1; i++)
+            for (int i = 0; i < 25; i++)
             {
                 //användaren skriver in ett nummer som sparas som int
                 string str1 = Console.ReadLine(); 
@@ -98,12 +99,28 @@ namespace Sodaproject
                     flaskor [i] = soda1; 
                     break;
 
+                    case 2:
+                                        
+                    Soda soda2 = new Soda("Coca Cola Zero", "lightläsk", 5);
+                    flaskor[i] = soda2;
+                    break;
+
+
+                    case 3:
+                    Soda soda3 = new Soda("Hallonsoda", "läsk", 6);
+                    flaskor[i] = soda3;
+                    break;
+
+
+                    case 4:
+                    Soda soda4 = new Soda("Ramlösa", "mineralvatten", 4);
+                    flaskor[i] = soda4;
+                    break;
 
                 }
 
-               
-                
 
+                
             }
 
         }
