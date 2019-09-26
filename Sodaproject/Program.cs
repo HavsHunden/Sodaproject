@@ -15,19 +15,10 @@ namespace Sodaproject
 
         public void Run()
         {
-
-            //skapar 4 objekt av klassen soda. De ges namn, pris och dryckestyp
-
-           
-          
-            
-          
-            //de här objekten kan man sedan välja på i add_soda 
-            
-            
-
+              Console.Clear();
             do
             {
+              
                 //En meny i vilken användaren matar in en int. 
                 Console.WriteLine("Välkommen till läskbackssimulatorn! Gör ett val");
                 Console.WriteLine("[1] Lägg till läsk");
@@ -50,7 +41,7 @@ namespace Sodaproject
                         break;
 
                     case 2:
-                        //gå till metod
+                        print_crate();
                         break;
                     case 3:
                         //gå till metod
@@ -131,7 +122,12 @@ namespace Sodaproject
 
         public void print_crate()
         {
-            
+            Console.Clear();
+            for (int i = 0; i < 24; i++)
+            {
+                Console.WriteLine(flaskor[i].GetNamn());
+
+            }
         }
 
         public int calc_total()
