@@ -84,12 +84,13 @@ namespace Sodaproject
             //kan man ha en viss siffra som egenskap och lägga i klassen soda?
 
             //Vi går igenom läskbacken och lägger till en soda i varje position
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 24; i++)
             {
+
                 //användaren skriver in ett nummer som sparas som int
                 string str1 = Console.ReadLine(); 
                 int läskval = Convert.ToInt32(str1);
-
+                
                 //beroende på numret på läskval läggs ett objekt av soda in i läskbacken
                 switch (läskval)
                 {
@@ -100,7 +101,7 @@ namespace Sodaproject
                     break;
 
                     case 2:
-                                        
+                   
                     Soda soda2 = new Soda("Coca Cola Zero", "lightläsk", 5);
                     flaskor[i] = soda2;
                     break;
@@ -130,9 +131,7 @@ namespace Sodaproject
 
         public void print_crate()
         {
-            //kod här
-            //Missa inte hjälpkoden som finns i projektbeskrivningen
-            //Där beskrivs hur man löser det med tomma positioner i vektorn
+            
         }
 
         public int calc_total()
