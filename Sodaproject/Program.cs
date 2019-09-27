@@ -18,15 +18,12 @@ namespace Sodaproject
         
             do
             {
-             
                 //En meny i vilken användaren matar in en int. 
                 Console.WriteLine("Välkommen till läskbackssimulatorn! Gör ett val");
                 Console.WriteLine("[1] Lägg till läsk");
                 Console.WriteLine("[2] Skriv ut innehåll");
                 Console.WriteLine("[3] Beräkna pris");
                 Console.WriteLine("[4] Avsluta");
-
-                //jag vill att den här menyn försvinner när en metod körs
 
                 string str = Console.ReadLine(); //användarens val
                 int menyval = Convert.ToInt32(str);
@@ -37,15 +34,17 @@ namespace Sodaproject
                     case 1:
                         //metoden add-soda anropas
                         add_soda();
-                        Console.WriteLine(flaskor[3].GetNamn());
                         break;
 
                     case 2:
+                        //metodanrop
                         print_crate();
                         break;
+
                     case 3:
                         //gå till metod
                         break;
+
                     case 4:
                         //gå till metod
                         break;
@@ -57,10 +56,10 @@ namespace Sodaproject
 
         public void add_soda()
         {
-            
-
+           
             Console.Clear();
-            //Namnet från listan skrivs ut för vardera läsk
+
+            //De olika läsksorterna skrivs ut
             Console.WriteLine("Fyll din läskback med 25 läskflaskor. Välj en läsk åt gången:");
             Console.WriteLine("[1] Coca cola, 5 kr");
             Console.WriteLine("[2] Coca Cola Zero, 5 kr");
@@ -68,16 +67,12 @@ namespace Sodaproject
             Console.WriteLine("[4] Ramlösa, 4 kr" );
             //+ ett val för att slumpa läsk
 
-           
-
             //Det användaren skriver in är en siffra som nu ska kopplas till en dryck
-            //om läskval = 1 ska soda1 läggas i sodacrate-vektorn
-            //kan man ha en viss siffra som egenskap och lägga i klassen soda?
-
-            //Vi går igenom läskbacken och lägger till en soda i varje position
+            //om läskval = 1 ska soda1 läggas i läskbacksvektorn
+ 
             for (int i = 0; i < 24; i++)
             {
-
+           
                 //användaren skriver in ett nummer som sparas som int
                 string str1 = Console.ReadLine(); 
                 int läskval = Convert.ToInt32(str1);
