@@ -15,10 +15,10 @@ namespace Sodaproject
 
         public void Run()
         {
-              Console.Clear();
+        
             do
             {
-              
+             
                 //En meny i vilken användaren matar in en int. 
                 Console.WriteLine("Välkommen till läskbackssimulatorn! Gör ett val");
                 Console.WriteLine("[1] Lägg till läsk");
@@ -123,9 +123,22 @@ namespace Sodaproject
         public void print_crate()
         {
             Console.Clear();
+         
             for (int i = 0; i < 24; i++)
             {
+               
+                if (flaskor [i] == null)
+                {
+                Console.WriteLine("Platsen är tom!");
+                }
+               
+
+                else if (flaskor [i]!= null)
+                {
                 Console.WriteLine(flaskor[i].GetNamn());
+                }
+             
+            
 
             }
         }
