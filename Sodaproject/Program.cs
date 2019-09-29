@@ -16,8 +16,10 @@ namespace Sodaproject
         public void Run()
         {
         
+ 
             do
             {
+          
                 //En meny i vilken användaren matar in en int. 
                 Console.WriteLine("Välkommen till läskbackssimulatorn! Gör ett val");
                 Console.WriteLine("[1] Lägg till läsk");
@@ -39,15 +41,15 @@ namespace Sodaproject
                     case 2:
                         //metodanrop
                         print_crate();
+                       
                         break;
 
                     case 3:
-                        //calc_total();
                         Console.WriteLine("Läsken i backen kostar " + calc_total() +" kr.");
                         break;
 
                     case 4:
-                        //gå till metod
+                        //avslutar programmet
                         Console.WriteLine("Programmet avslutas.");
                         break;
 
@@ -58,23 +60,30 @@ namespace Sodaproject
 
         public void add_soda()
         {
-           
-            Console.Clear();
 
-            //De olika läsksorterna skrivs ut
-            Console.WriteLine("Fyll din läskback med 25 läskflaskor. Välj en läsk åt gången:");
-            Console.WriteLine("[1] Coca cola, 5 kr");
-            Console.WriteLine("[2] Coca Cola Zero, 5 kr");
-            Console.WriteLine("[3] Hallonsoda, 6 kr");
-            Console.WriteLine("[4] Ramlösa, 4 kr" );
-            //+ ett val för att slumpa läsk
+          
 
-            //Det användaren skriver in är en siffra som nu ska kopplas till en dryck
-            //om läskval = 1 ska soda1 läggas i läskbacksvektorn
  
             for (int i = 0; i < 5; i++)
             {
-           
+               
+                Console.Clear();
+                //De olika läsksorterna skrivs ut
+                Console.WriteLine("Fyll din läskback med 25 läskflaskor. Välj en läsk åt gången:");
+                Console.WriteLine("[1] Coca cola, 5 kr");
+                Console.WriteLine("[2] Coca Cola Zero, 5 kr");
+                Console.WriteLine("[3] Hallonsoda, 6 kr");
+                Console.WriteLine("[4] Ramlösa, 4 kr");
+                //+ ett val för att slumpa läsk
+
+                //Det användaren skriver in är en siffra som nu ska kopplas till en dryck
+                //om läskval = 1 ska soda1 läggas i läskbacksvektorn
+
+
+
+
+
+
                 //användaren skriver in ett nummer som sparas som int
                 string str1 = Console.ReadLine(); 
                 int läskval = Convert.ToInt32(str1);
@@ -82,9 +91,12 @@ namespace Sodaproject
                 //beroende på numret på läskval läggs ett objekt av soda in i läskbacken
                 switch (läskval)
                 {
+
+
                     case 1:
 
                     Soda soda1 = new Soda("Coca Cola", "läsk", 5);
+
                     flaskor [i] = soda1; 
                     break;
 
@@ -105,10 +117,12 @@ namespace Sodaproject
                     Soda soda4 = new Soda("Ramlösa", "mineralvatten", 4);
                     flaskor[i] = soda4;
                     break;
+                         
+                    
 
                 }
 
-
+                Console.Clear();
                 
             }
 
@@ -121,7 +135,7 @@ namespace Sodaproject
         {
             Console.Clear();
          
-            for (int i = 0; i < 24; i++)
+            for (int i = 0; i < 5; i++)
             {
                
                 if (flaskor [i] == null)
