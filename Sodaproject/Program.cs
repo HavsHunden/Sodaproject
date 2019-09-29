@@ -41,7 +41,7 @@ namespace Sodaproject
                     case 2:
                         //metodanrop
                         print_crate();
-                       
+
                         break;
 
                     case 3:
@@ -133,7 +133,7 @@ namespace Sodaproject
 
         public void print_crate()
         {
-            Console.Clear();
+           
          
             for (int i = 0; i < 5; i++)
             {
@@ -148,10 +148,9 @@ namespace Sodaproject
                 {
                 Console.WriteLine(flaskor[i].GetNamn());
                 }
-             
-            
 
             }
+
         }
 
         public int calc_total()
