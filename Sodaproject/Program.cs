@@ -11,7 +11,7 @@ namespace Sodaproject
         private Soda[] flaskor = new Soda[24];
         public int antal_flaskor = 0; //Håller reda på antal flaskor
         private int i;
-        private int sum = 0;
+        int menyval;
        
         public void Run()
         {
@@ -26,7 +26,7 @@ namespace Sodaproject
                 Console.WriteLine("[4] Avsluta");
 
                 string str = Console.ReadLine(); //användarens val
-                int menyval = Convert.ToInt32(str);
+                menyval = Convert.ToInt32(str);
 
                 //här kopplas knapptryckningen till de olika metoder som finns för läskbacken
                 switch (menyval)
@@ -42,17 +42,18 @@ namespace Sodaproject
                         break;
 
                     case 3:
-                        calc_total();
-                        Console.WriteLine("Läsken i backen kostar " + sum +" kr.");
+                        //calc_total();
+                        Console.WriteLine("Läsken i backen kostar " + calc_total() +" kr.");
                         break;
 
                     case 4:
                         //gå till metod
+                        Console.WriteLine("Programmet avslutas.");
                         break;
 
                 }
             }
-            while (antal_flaskor < 24);
+            while (menyval != 4);
         }
 
         public void add_soda()
@@ -147,8 +148,9 @@ namespace Sodaproject
             
             for (int i = 0; i < 5; i++)
             {
-                sum += flaskor[i].GetPris();
-               
+
+                sum = sum + flaskor[i].GetPris();
+
             }
             return sum;
          
