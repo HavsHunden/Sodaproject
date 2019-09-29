@@ -10,9 +10,9 @@ namespace Sodaproject
     {
         private Soda[] flaskor = new Soda[24];
         public int antal_flaskor = 0; //Håller reda på antal flaskor
-
+        private int i;
+        private int sum = 0;
        
-
         public void Run()
         {
         
@@ -42,7 +42,8 @@ namespace Sodaproject
                         break;
 
                     case 3:
-                        //gå till metod
+                        calc_total();
+                        Console.WriteLine("Läsken i backen kostar " + sum +" kr.");
                         break;
 
                     case 4:
@@ -70,7 +71,7 @@ namespace Sodaproject
             //Det användaren skriver in är en siffra som nu ska kopplas till en dryck
             //om läskval = 1 ska soda1 läggas i läskbacksvektorn
  
-            for (int i = 0; i < 24; i++)
+            for (int i = 0; i < 5; i++)
             {
            
                 //användaren skriver in ett nummer som sparas som int
@@ -140,10 +141,17 @@ namespace Sodaproject
 
         public int calc_total()
         {
-            return 1;
-
-            //kod här
-            //Tänk på att inte räkna med tomma positioner i vektorn
+           
+           
+            int sum = 0;
+            
+            for (int i = 0; i < 5; i++)
+            {
+                sum += flaskor[i].GetPris();
+               
+            }
+            return sum;
+         
         }
 
         public void find_soda()
