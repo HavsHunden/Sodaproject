@@ -16,10 +16,10 @@ namespace Sodaproject
         public void Run()
         {
         
- 
+
             do
             {
-          
+               
                 //En meny i vilken användaren matar in en int. 
                 Console.WriteLine("Välkommen till läskbackssimulatorn! Gör ett val");
                 Console.WriteLine("[1] Lägg till läsk");
@@ -139,10 +139,25 @@ namespace Sodaproject
 
         public void remove_soda()
         {
-          
+            Console.Clear();
 
             Console.WriteLine("Backen innehåller:");
-            print_crate();
+            for (int i = 0; i < 5; i++)
+            {
+
+                if (flaskor[i] == null)
+                {
+                    Console.WriteLine("Platsen är tom!");
+                }
+
+
+                else if (flaskor[i] != null)
+                {
+                    Console.WriteLine(i+1 + ". " + flaskor[i].GetNamn());
+                }
+
+            }
+            //print_crate();
             Console.WriteLine("För att ändra läsk, välj dess plats i backen:");
             string str = Console.ReadLine(); //användarens val
             int flaska = Convert.ToInt32(str);
@@ -162,25 +177,25 @@ namespace Sodaproject
                 case 1:
 
                     Soda soda1 = new Soda("Coca Cola", "läsk", 5);
-                    flaskor[flaska] = soda1;
+                    flaskor[flaska-1] = soda1;
                     break;
 
                 case 2:
 
                     Soda soda2 = new Soda("Coca Cola Zero", "lightläsk", 5);
-                    flaskor[flaska] = soda2;
+                    flaskor[flaska-1] = soda2;
                     break;
 
 
                 case 3:
                     Soda soda3 = new Soda("Hallonsoda", "läsk", 6);
-                    flaskor[flaska] = soda3;
+                    flaskor[flaska-1] = soda3;
                     break;
 
 
                 case 4:
                     Soda soda4 = new Soda("Ramlösa", "mineralvatten", 4);
-                    flaskor[flaska] = soda4;
+                    flaskor[flaska-1] = soda4;
                     break;
             }
 
@@ -189,7 +204,7 @@ namespace Sodaproject
 
         public void print_crate()
         {
-           
+            Console.Clear();
          
             for (int i = 0; i < 5; i++)
             {
@@ -211,7 +226,7 @@ namespace Sodaproject
 
         public int calc_total()
         {
-           
+            Console.Clear();
            
             int sum = 0;
             
