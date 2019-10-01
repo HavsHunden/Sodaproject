@@ -205,7 +205,7 @@ namespace Sodaproject
 
                 else if (flaskor [i]!= null)
                 {
-                Console.WriteLine(flaskor[i].GetNamn());
+                    Console.WriteLine(flaskor[i].GetNamn() +", " + flaskor[i].GetDryckestyp());
                 }
 
             }
