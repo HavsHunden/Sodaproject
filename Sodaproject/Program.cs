@@ -49,7 +49,7 @@ namespace Sodaproject
 
                     case 3:
                         //anropar metod som beräknar och skriver ut priset
-                        Console.WriteLine("Läsken i backen kostar " + calc_total() +" kr.");
+                        calc_total();
                         break;
 
                     case 4:
@@ -224,19 +224,39 @@ namespace Sodaproject
 
         }
 
-        public int calc_total()
+        public void calc_total()
         {
             Console.Clear();
-           
+
+            bool flaskorFinns = false;
+
             int sum = 0;
             
             for (int i = 0; i < 5; i++)
             {
+                if (flaskor[i] == null)
+                {
+                    Console.WriteLine("Platsen är tom!");
+                }
+                else if(flaskor [i]!= null)
+                {
+                    flaskorFinns = true;
+                    sum = sum + flaskor[i].GetPris();
+                }
 
-                sum = sum + flaskor[i].GetPris();
+
 
             }
-            return sum;
+
+            if (flaskorFinns)
+            {
+                Console.WriteLine(sum);
+            }
+            else if(flaskorFinns==false)
+            {
+                Console.WriteLine("Backen är tom");
+            }
+        
          
         }
 
