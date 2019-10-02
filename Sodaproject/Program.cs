@@ -12,7 +12,8 @@ namespace Sodaproject
         //Här skapas en vektor som kan innehålla objekt av klassen soda, som i sin tur har olika egenskaper.
         private Soda[] flaskor = new Soda[24];
         int menyval; // deklareras här för att användas i metoden Run()
-       
+        private int i;
+
         public void Run()
         {
             //den här metoden körs i en loop tills det att användaren avslutat programmet
@@ -145,46 +146,57 @@ namespace Sodaproject
                 }
 
             }
-            //print_crate();
-            Console.WriteLine("För att ändra läsk, välj dess plats i backen:");
-            string str = Console.ReadLine(); //användarens val
-            int flaska = Convert.ToInt32(str);
-
-            Console.WriteLine("Välj en ny läsk:");
-            Console.WriteLine("[1] Coca cola, 5 kr");
-            Console.WriteLine("[2] Coca Cola Zero, 5 kr");
-            Console.WriteLine("[3] Hallonsoda, 6 kr");
-            Console.WriteLine("[4] Ramlösa, 4 kr");
-           
-
-            str = Console.ReadLine(); //användarens val
-            int smak = Convert.ToInt32(str);
-
-            switch (smak)
+            if (flaskor[i] != null)
             {
-                case 1:
-
-                    Soda soda1 = new Soda("Coca Cola", "läsk", 5);
-                    flaskor[flaska-1] = soda1;
-                    break;
-
-                case 2:
-
-                    Soda soda2 = new Soda("Coca Cola Zero", "lightläsk", 5);
-                    flaskor[flaska-1] = soda2;
-                    break;
 
 
-                case 3:
-                    Soda soda3 = new Soda("Hallonsoda", "läsk", 6);
-                    flaskor[flaska-1] = soda3;
-                    break;
+                //print_crate();
+                Console.WriteLine("För att ändra läsk, välj dess plats i backen:");
+                string str = Console.ReadLine(); //användarens val
+                int flaska = Convert.ToInt32(str);
+
+                Console.WriteLine("Välj en ny läsk:");
+                Console.WriteLine("[1] Coca cola, 5 kr");
+                Console.WriteLine("[2] Coca Cola Zero, 5 kr");
+                Console.WriteLine("[3] Hallonsoda, 6 kr");
+                Console.WriteLine("[4] Ramlösa, 4 kr");
 
 
-                case 4:
-                    Soda soda4 = new Soda("Ramlösa", "mineralvatten", 4);
-                    flaskor[flaska-1] = soda4;
-                    break;
+                str = Console.ReadLine(); //användarens val
+                int smak = Convert.ToInt32(str);
+
+                switch (smak)
+                {
+                    case 1:
+
+                        Soda soda1 = new Soda("Coca Cola", "läsk", 5);
+                        flaskor[flaska - 1] = soda1;
+                        break;
+
+                    case 2:
+
+                        Soda soda2 = new Soda("Coca Cola Zero", "lightläsk", 5);
+                        flaskor[flaska - 1] = soda2;
+                        break;
+
+
+                    case 3:
+                        Soda soda3 = new Soda("Hallonsoda", "läsk", 6);
+                        flaskor[flaska - 1] = soda3;
+                        break;
+
+
+                    case 4:
+                        Soda soda4 = new Soda("Ramlösa", "mineralvatten", 4);
+                        flaskor[flaska - 1] = soda4;
+                        break;
+                }
+            }
+
+            else if (flaskor[i] == null)
+            {
+                Console.WriteLine("Läskbacken är tom. Tryck valfri tangent för att återgå till menyn");
+                Console.ReadKey();
             }
 
         }
