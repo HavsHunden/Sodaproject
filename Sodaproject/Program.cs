@@ -13,7 +13,7 @@ namespace Sodaproject
         private Soda[] flaskor = new Soda[24];
         int menyval; // deklareras här för att användas i metoden Run()
         private int i;
-
+        int antal_flaskor;
         public void Run()
         {
             //den här metoden körs i en loop tills det att användaren avslutat programmet
@@ -71,57 +71,68 @@ namespace Sodaproject
 
         public void add_soda()
         {
-            //Här kan användaren via en for-loop och knapptryckningar lägga in en läsk i backen i taget. 
-            for (int i = 0; i < 5; i++)
-            {
-               
-                Console.Clear();
-                //De olika läsksorterna skrivs ut
-                Console.WriteLine("Fyll din läskback med 25 läskflaskor. Välj en läsk åt gången:");
-                Console.WriteLine("[1] Coca cola, 5 kr");
-                Console.WriteLine("[2] Coca Cola Zero, 5 kr");
-                Console.WriteLine("[3] Hallonsoda, 6 kr");
-                Console.WriteLine("[4] Ramlösa, 4 kr");
+           
 
-                //användaren skriver in ett nummer som sparas som int
-                string str1 = Console.ReadLine(); 
-                int läskval = Convert.ToInt32(str1);
-                
-                //beroende på numret på läskval läggs ett objekt av soda in i läskbacken
-                //om exempelvis läskval = 1 ska soda1 läggas i läskbacksvektorn
-                switch (läskval)
+
+
+                   //De olika läsksorterna skrivs ut
+                    Console.WriteLine("Fyll din läskback med 25 läskflaskor. Välj en läsk åt gången:");
+                    Console.WriteLine("[1] Coca cola, 5 kr");
+                    Console.WriteLine("[2] Coca Cola Zero, 5 kr");
+                    Console.WriteLine("[3] Hallonsoda, 6 kr");
+                    Console.WriteLine("[4] Ramlösa, 4 kr");
+                    
+
+
+                //Här kan användaren via en for-loop och knapptryckningar lägga in en läsk i backen i taget. 
+                for (int i = 0; i < 5; i++)
                 {
-
-
-                    case 1:
-
-                    Soda soda1 = new Soda("Coca Cola", "läsk", 5);
-
-                    flaskor [i] = soda1; 
-                    break;
-
-                    case 2:
+      
+                    
                    
-                    Soda soda2 = new Soda("Coca Cola Zero", "lightläsk", 5);
-                    flaskor[i] = soda2;
-                    break;
+
+                    //användaren skriver in ett nummer som sparas som int
+                    string str1 = Console.ReadLine();
+                    int läskval = Convert.ToInt32(str1);
+
+                    //beroende på numret på läskval läggs ett objekt av soda in i läskbacken
+                    //om exempelvis läskval = 1 ska soda1 läggas i läskbacksvektorn
+                    switch (läskval)
+                    {
 
 
-                    case 3:
-                    Soda soda3 = new Soda("Hallonsoda", "läsk", 6);
-                    flaskor[i] = soda3;
-                    break;
+                        case 1:
+                        Soda soda1 = new Soda("Coca Cola", "läsk", 5);
+                        flaskor[i] = soda1;
+                        Console.WriteLine("Du lade till " + soda1.GetNamn());
+                        break;
+
+                        case 2:
+                        Soda soda2 = new Soda("Coca Cola Zero", "lightläsk", 5);
+                        flaskor[i] = soda2;
+                        Console.WriteLine("Du lade till " + soda2.GetNamn());
+                        break;
 
 
-                    case 4:
-                    Soda soda4 = new Soda("Ramlösa", "mineralvatten", 4);
-                    flaskor[i] = soda4;
-                    break;
+                        case 3:
+                        Soda soda3 = new Soda("Hallonsoda", "läsk", 6);
+                        flaskor[i] = soda3;
+                        Console.WriteLine("Du lade till " + soda3.GetNamn());
+                        break;
+
+
+                        case 4:
+                        Soda soda4 = new Soda("Ramlösa", "mineralvatten", 4);
+                        flaskor[i] = soda4;
+                        Console.WriteLine("Du lade till " + soda4.GetNamn());
+                        break;
+
+                    }
+
 
                 }
 
-                
-            }
+            
 
         }
 
