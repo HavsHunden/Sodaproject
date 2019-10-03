@@ -22,7 +22,7 @@ namespace Sodaproject
             {
                
                 //Här ligger en meny i vilken användaren matar in en int. 
-                Console.WriteLine("Välkommen till läskbackssimulatorn! Gör ett val");
+                Console.WriteLine("Välkommen till läskbackssimulatorn! Gör ett val:");
                 Console.WriteLine("[1] Lägg till läsk");
                 Console.WriteLine("[2] Skriv ut innehåll");
                 Console.WriteLine("[3] Beräkna pris");
@@ -205,22 +205,29 @@ namespace Sodaproject
         public void print_crate()
         {
             Console.Clear();
-         
+            //bool flaskorFinns = false;
+
+           
+
+
             for (int i = 0; i < 5; i++)
             {
-               
-                if (flaskor [i] == null)
+                if (flaskor [i]!=null)
                 {
-                Console.WriteLine("Platsen är tom!");
-                }
-               
 
-                else if (flaskor [i]!= null)
-                {
-                    Console.WriteLine(flaskor[i].GetNamn() +", " + flaskor[i].GetDryckestyp());
+                Console.WriteLine(flaskor[i].GetNamn() + ", " + flaskor[i].GetDryckestyp());
                 }
-
+              
             }
+
+           if (flaskor[i]== null)
+            {
+                Console.WriteLine("Backen är tom. Tryck valfri tangent för att återgå till menyn");
+                Console.ReadKey();
+            }
+
+
+            
 
         }
 
