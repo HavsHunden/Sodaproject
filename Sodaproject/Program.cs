@@ -13,7 +13,7 @@ namespace Sodaproject
         private Soda[] flaskor = new Soda[24];
         int menyval; // deklareras här för att användas i metoden Run()
         private int i;
-        int antal_flaskor;
+   
         public void Run()
         {
             //den här metoden körs i en loop tills det att användaren avslutat programmet
@@ -208,11 +208,19 @@ namespace Sodaproject
                 string str = Console.ReadLine(); //användarens val
                 int flaska = Convert.ToInt32(str);
 
+
+                //De olika läsksorterna skrivs ut
                 Console.WriteLine("Välj en ny läsk:");
                 Console.WriteLine("[1] Coca cola, 5 kr");
                 Console.WriteLine("[2] Coca Cola Zero, 5 kr");
                 Console.WriteLine("[3] Hallonsoda, 6 kr");
-                Console.WriteLine("[4] Ramlösa, 4 kr");
+                Console.WriteLine("[4] Sockerdricka, 4 kr");
+                Console.WriteLine("[5] Fanta, 5 kr");
+                Console.WriteLine("[6] Grappo, 5 kr");
+                Console.WriteLine("[7] Ramlösa, 4 kr");
+                Console.WriteLine("[8] Loka Citron, 4 kr");
+                Console.WriteLine("[9] Norrlands guld 3,5 %, 6 kr");
+                Console.WriteLine("[10] Pripps blå 3,5%, 6 kr");
 
 
                 str = Console.ReadLine(); //användarens val
@@ -240,9 +248,40 @@ namespace Sodaproject
 
 
                     case 4:
-                        Soda soda4 = new Soda("Ramlösa", "mineralvatten", 4);
+                        Soda soda4 = new Soda("Sockerdricka", "läsk", 4);
                         flaskor[flaska - 1] = soda4;
                         break;
+
+                    case 5:
+                        Soda soda5 = new Soda("Fanta", "läsk", 5);
+                        flaskor[flaska - 1] = soda5;
+                        break;
+
+                    case 6:
+                        Soda soda6 = new Soda("Grappo", "läsk", 5);
+                        flaskor[flaska - 1] = soda6;
+                        break;
+
+                    case 7:
+                        Soda soda7 = new Soda("Ramlösa", "mineralvatten", 4);
+                        flaskor[flaska - 1] = soda7;
+                        break;
+
+                    case 8:
+                        Soda soda8 = new Soda("Loka citron", "mineralvatten", 4);
+                        flaskor[flaska - 1] = soda8;
+                        break;
+
+                    case 9:
+                        Soda soda9 = new Soda("Norrlands Guld", "öl", 6);
+                        flaskor[flaska - 1] = soda9;
+                        break;
+
+                    case 10:
+                        Soda soda10 = new Soda("Pripps blå", "öl", 6);
+                        flaskor[flaska - 1] = soda10;
+                        break;
+
                 }
             }
 
