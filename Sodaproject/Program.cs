@@ -234,11 +234,8 @@ namespace Sodaproject
             
             for (int i = 0; i < 5; i++)
             {
-                if (flaskor[i] == null)
-                {
-                    Console.WriteLine("Platsen är tom!");
-                }
-                else if(flaskor [i]!= null)
+              
+                if(flaskor [i]!= null)
                 {
                     flaskorFinns = true;
                     sum = sum + flaskor[i].GetPris();
@@ -250,11 +247,13 @@ namespace Sodaproject
 
             if (flaskorFinns)
             {
-                Console.WriteLine(sum);
+                Console.WriteLine("Läsken i backen kostar " + sum + " kr. Tryck valfri tangent för att återgå till menyn");
+                Console.ReadKey();
             }
             else if(flaskorFinns==false)
             {
-                Console.WriteLine("Backen är tom");
+                Console.WriteLine("Backen är tom. Tryck valfri tangent för att återgå till menyn");
+                Console.ReadKey();
             }
         
          
