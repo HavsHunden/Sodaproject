@@ -71,9 +71,13 @@ namespace Sodaproject
 
         public void add_soda()
         {
-           
 
 
+            //backen_är_full();
+            /*if(true)
+            {
+                Console.WriteLine("Backen är full");
+            }*/
 
             //De olika läsksorterna skrivs ut
             Console.WriteLine("Fyll din läskback med 25 läskflaskor. Välj en läsk åt gången:");
@@ -357,6 +361,18 @@ namespace Sodaproject
         
          
         }
+
+        /*public bool backen_är_full()
+        {
+            bool flaskorFinns = false;
+
+            for (int i = 0; i < 5; i++)
+            {
+                flaskorFinns = true;
+            }
+            return true;
+
+        }*/
 
         public void find_soda()
         {
