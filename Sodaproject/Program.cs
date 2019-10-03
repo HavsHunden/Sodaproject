@@ -75,17 +75,23 @@ namespace Sodaproject
 
 
 
-                   //De olika läsksorterna skrivs ut
-                    Console.WriteLine("Fyll din läskback med 25 läskflaskor. Välj en läsk åt gången:");
-                    Console.WriteLine("[1] Coca cola, 5 kr");
-                    Console.WriteLine("[2] Coca Cola Zero, 5 kr");
-                    Console.WriteLine("[3] Hallonsoda, 6 kr");
-                    Console.WriteLine("[4] Ramlösa, 4 kr");
-                    
+            //De olika läsksorterna skrivs ut
+            Console.WriteLine("Fyll din läskback med 25 läskflaskor. Välj en läsk åt gången:");
+            Console.WriteLine("[1] Coca cola, 5 kr");
+            Console.WriteLine("[2] Coca Cola Zero, 5 kr");
+            Console.WriteLine("[3] Hallonsoda, 6 kr");
+            Console.WriteLine("[4] Sockerdricka, 4 kr");
+            Console.WriteLine("[5] Fanta, 5 kr");
+            Console.WriteLine("[6] Grappo, 5 kr");
+            Console.WriteLine("[7] Ramlösa, 4 kr");
+            Console.WriteLine("[8] Loka Citron, 4 kr");
+            Console.WriteLine("[9] Norrlands guld 3,5 %, 6 kr");
+            Console.WriteLine("[10] Pripps blå 3,5%, 6 kr");
 
 
-                //Här kan användaren via en for-loop och knapptryckningar lägga in en läsk i backen i taget. 
-                for (int i = 0; i < 5; i++)
+
+            //Här kan användaren via en for-loop och knapptryckningar lägga in en läsk i backen i taget. 
+            for (int i = 0; i < 5; i++)
                 {
       
                     
@@ -122,12 +128,48 @@ namespace Sodaproject
 
 
                         case 4:
-                        Soda soda4 = new Soda("Ramlösa", "mineralvatten", 4);
+                        Soda soda4 = new Soda("Sockerdricka", "läsk", 4);
                         flaskor[i] = soda4;
                         Console.WriteLine("Du lade till " + soda4.GetNamn());
                         break;
 
-                    }
+                        case 5:
+                        Soda soda5 = new Soda("Fanta", "läsk", 5);
+                        flaskor[i] = soda5;
+                        Console.WriteLine("Du lade till " + soda5.GetNamn());
+                        break;
+
+                        case 6:
+                        Soda soda6 = new Soda("Grappo", "läsk", 5);
+                        flaskor[i] = soda6;
+                        Console.WriteLine("Du lade till " + soda6.GetNamn());
+                        break;
+
+                        case 7:
+                        Soda soda7 = new Soda("Ramlösa", "mineralvatten", 4);
+                        flaskor[i] = soda7;
+                        Console.WriteLine("Du lade till " + soda7.GetNamn());
+                        break;
+
+                        case 8:
+                        Soda soda8 = new Soda("Loka Citron", "mineralvatten", 4);
+                        flaskor[i] = soda8;
+                        Console.WriteLine("Du lade till " + soda8.GetNamn());
+                        break;
+
+                        case 9:
+                        Soda soda9 = new Soda("Norrlands Guld 3,5%", "öl", 6);
+                        flaskor[i] = soda9;
+                        Console.WriteLine("Du lade till " + soda9.GetNamn());
+                        break;
+
+                        case 10:
+                        Soda soda10 = new Soda("Pripps blå 3,5%", "öl", 6);
+                        flaskor[i] = soda10;
+                        Console.WriteLine("Du lade till " + soda10.GetNamn());
+                        break;
+
+                }
 
 
                 }
