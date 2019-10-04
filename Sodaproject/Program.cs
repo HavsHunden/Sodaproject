@@ -193,7 +193,7 @@ namespace Sodaproject
 
                 else if (sodaCrateArray[i] != null)
                 {
-                    //Här skrivs namnen ut och numret på positionen skrivs ut framför det
+                    //Här skrivs namnen ut och numret på positionen skrivs ut framför det (som ju måste vara i+1 då i från början är noll)
                     Console.WriteLine(i+1 + ". " + sodaCrateArray[i].GetNamn());
                 }
 
@@ -203,10 +203,10 @@ namespace Sodaproject
                 //om det finns en läsk på varje plats i vektorn får användaren välja en plats i den
                 Console.WriteLine("För att ändra läsk, välj dess plats i backen:");
                 string str = Console.ReadLine(); 
-                int flaska = Convert.ToInt32(str);
+                int flaska = Convert.ToInt32(str);//flaska blir då numret på platsen i backen
 
 
-                //De olika läsksorterna skrivs ut
+                //De olika läsksorterna skrivs ut på samma sätt som i add_soda
                 Console.WriteLine("Välj en ny läsk:");
                 Console.WriteLine("[1] Coca cola, 5 kr");
                 Console.WriteLine("[2] Coca Cola Zero, 5 kr");
@@ -219,8 +219,8 @@ namespace Sodaproject
                 Console.WriteLine("[9] Norrlands guld 3,5 %, 6 kr");
                 Console.WriteLine("[10] Pripps blå 3,5%, 6 kr");
 
-
-                str = Console.ReadLine(); //användarens val
+                //knapptryckningen kopplas till en switch-sats som lägger in en ny läsk på vald plats
+                str = Console.ReadLine(); 
                 int smak = Convert.ToInt32(str);
 
                 switch (smak)
@@ -228,7 +228,7 @@ namespace Sodaproject
                     case 1:
 
                         Soda soda1 = new Soda("Coca Cola", "läsk", 5);
-                        sodaCrateArray[flaska - 1] = soda1;
+                        sodaCrateArray[flaska - 1] = soda1;//1 måste subtraheras från flaska eftersom indexeringen hos vektorn börjar på 0
                         break;
 
                     case 2:
@@ -281,7 +281,7 @@ namespace Sodaproject
 
                 }
             }
-
+            //om läskbacken är tom fås detta meddelande, men detta blir en upprepning.
             else if (sodaCrateArray[i] == null)
             {
                 Console.WriteLine("Läskbacken är tom. Tryck valfri tangent för att återgå till menyn");
