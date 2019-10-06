@@ -164,6 +164,7 @@ namespace Sodaproject
 
 
                 }
+            //när 25 flaskor lagts till, återgår användaren till menyn via knapptryckning
             Console.WriteLine("Backen är full! Tryck valfri tangent för att återgå till menyn.");
             Console.ReadKey();
 
@@ -275,7 +276,7 @@ namespace Sodaproject
 
                 }
             }
-            //om läskbacken är tom fås detta meddelande, men detta blir en upprepning.
+            //om läskbacken är tom fås ett meddelande om det
             else if (sodaCrateArray[i] == null)
             {
                 Console.WriteLine("Läskbacken är tom. Tryck valfri tangent för att återgå till menyn");
@@ -286,18 +287,14 @@ namespace Sodaproject
         
 
         public void print_crate()
-        {
+        {//metod som skriver ut namn och dryckestyp
             Console.Clear();
-            //bool flaskorFinns = false;
-
            
-
-
             for (int i = 0; i < 25; i++)
             {
                 if (sodaCrateArray [i]!=null)
                 {
-
+                //namn och dryckestyp hämtas via metoden i Soda
                 Console.WriteLine(sodaCrateArray[i].GetNamn() + ", " + sodaCrateArray[i].GetDryckestyp());
                 }
               
@@ -305,6 +302,7 @@ namespace Sodaproject
 
            if (sodaCrateArray[i]== null)
             {
+                //då samtliga positioner i backen  är tomma, skrivs det ut. Användaren återgår till menyn via knapptryckning
                 Console.WriteLine("Backen är tom. Tryck valfri tangent för att återgå till menyn");
                 Console.ReadKey();
             }
@@ -315,10 +313,9 @@ namespace Sodaproject
         }
 
         public void calc_total()
-        {
+        {//Metod som beräknar summan av flaskornas pris.
             Console.Clear();
-
-            bool flaskorFinns = false;
+            bool flaskorFinns = false;//en boolean kontrollerar om någon flaska över huvud taget finns i backen.
 
             int sum = 0;
             
@@ -327,8 +324,8 @@ namespace Sodaproject
               
                 if(sodaCrateArray [i]!= null)
                 {
-                    flaskorFinns = true;
-                    sum = sum + sodaCrateArray[i].GetPris();
+                    flaskorFinns = true;//här har vi sagt att då flaskor finns samtidigt som alla positioner har en flaska, hämtas priset för varje flaska
+                    sum = sum + sodaCrateArray[i].GetPris();//summan av flaskornas pris beräknas
                 }
 
 
@@ -336,12 +333,13 @@ namespace Sodaproject
             }
 
             if (flaskorFinns)
+            //denna används för att få EN utskrift av priset för samtliga flaskor
             {
                 Console.WriteLine("Läsken i backen kostar " + sum + " kr. Tryck valfri tangent för att återgå till menyn");
                 Console.ReadKey();
             }
             else if(flaskorFinns==false)
-            {
+            {//Denna utskrift fås om användaren väljer metoden utan att ha fyllt backen
                 Console.WriteLine("Backen är tom. Tryck valfri tangent för att återgå till menyn");
                 Console.ReadKey();
             }
