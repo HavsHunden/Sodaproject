@@ -63,7 +63,6 @@ namespace Sodaproject
                         Console.WriteLine("Programmet avslutas.");
                         break;
 
-              
 
                 }
             }
@@ -72,13 +71,6 @@ namespace Sodaproject
 
         public void add_soda()
         {
-
-
-            //backen_är_full();
-            /*if(true)
-            {
-                Console.WriteLine("Backen är full");
-            }*/
 
             //De olika läsksorterna att välja på skrivs ut
             Console.WriteLine("Fyll din läskback med 25 läskflaskor. Välj en läsk åt gången:");
@@ -172,6 +164,8 @@ namespace Sodaproject
 
 
                 }
+            Console.WriteLine("Backen är full! Tryck valfri tangent för att återgå till menyn.");
+            Console.ReadKey();
 
         }
 
@@ -354,36 +348,7 @@ namespace Sodaproject
         
          
         }
-
-        /*public bool backen_är_full()
-        {
-            bool flaskorFinns = false;
-
-            for (int i = 0; i < 5; i++)
-            {
-                flaskorFinns = true;
-            }
-            return true;
-
-        }*/
-
-        public void find_soda()
-        {
-            //Betyg C
-            //Beskrivs i läroboken på sidan 147 och framåt (kodexempel på sidan 149)
-            //Man ska kunna söka efter ett namn
-            //Man kan använda string-metoderna ToLower() eller ToUpper() 
-        }
-
-        public void sort_sodas()
-        {
-            //Betyg A-C
-            //Beskrivs i läroboken på sidan 147 och framåt (kodexempel på sidan 159)
-            //Man ska kunna sortera vektorn med flaskor och med bubble sort
-            //Det är mycket svårt att sortera efter bokstavsordning - är inte flaskorna egna objekt utan bara strängar...
-            //... går det bra att sortera efter längden på namnet istället. 
-        }
-
+      
     }
 
     class Soda
