@@ -11,7 +11,7 @@ namespace Sodaproject
     {
         //Här skapas en vektor som kan innehålla objekt av klassen soda, som i sin tur har olika egenskaper.
         private Soda[] sodaCrateArray = new Soda[25];
-        int menyval; // deklareras här för att användas i metoden Run()
+        int SodaChoice; // deklareras här för att användas i metoden Run()
 
         private int i;//deklareras här för att användas i metoden add_soda
    
@@ -31,10 +31,10 @@ namespace Sodaproject
 
                 //Då användaren kommer att skriva in ett nummer, konverteras den inmatade strängen till en int.
                 string str = Console.ReadLine(); 
-                menyval = Convert.ToInt32(str);
+                SodaChoice = Convert.ToInt32(str);
 
                 //Här kopplas knapptryckningen till de olika metoder som finns för läskbacken
-                switch (menyval)
+                switch (SodaChoice)
                 {
                     case 1:
                         //metoden add-soda anropas
@@ -64,7 +64,7 @@ namespace Sodaproject
 
                 }
             }
-            while (menyval != 5); // Så länge användaren inte trycker 5, körs loopen
+            while (SodaChoice != 5); // Så länge användaren inte trycker 5, körs loopen
         }
 
         public void add_soda()
@@ -90,11 +90,11 @@ namespace Sodaproject
                 {
                     //användaren skriver in ett nummer som sparas som int
                     string str1 = Console.ReadLine();
-                    int läskval = Convert.ToInt32(str1);
+                    int sodaChoice = Convert.ToInt32(str1);
 
                     //beroende på numret på läskval läggs ett objekt av soda in i läskbacken
                     //om exempelvis läskval = 1 ska soda1 läggas i läskbacksvektorn
-                    switch (läskval)
+                    switch (sodaChoice)
                     {
                         case 1:
                         Soda soda1 = new Soda("Coca Cola", "läsk", 5);//Här skapas objekt av Soda, med namn, pris och dryckestyp.
@@ -196,7 +196,7 @@ namespace Sodaproject
                 //om det finns en läsk på varje plats i vektorn får användaren välja en plats i den
                 Console.WriteLine("För att ändra läsk, välj dess plats i backen:");
                 string str = Console.ReadLine(); 
-                int flaska = Convert.ToInt32(str);//flaska blir då numret på platsen i backen
+                int bottleNr = Convert.ToInt32(str);// blir då numret på platsen i backen
 
 
                 //De olika läsksorterna skrivs ut på samma sätt som i add_soda
@@ -214,62 +214,62 @@ namespace Sodaproject
 
                 //knapptryckningen kopplas till en switch-sats som lägger in en ny läsk på vald plats
                 str = Console.ReadLine(); 
-                int smak = Convert.ToInt32(str);
+                int newSoda = Convert.ToInt32(str);
 
-                switch (smak)
+                switch (newSoda)
                 {
                     case 1:
 
                         Soda soda1 = new Soda("Coca Cola", "läsk", 5);
-                        sodaCrateArray[flaska - 1] = soda1;//1 måste subtraheras från flaska eftersom indexeringen hos vektorn börjar på 0
+                        sodaCrateArray[bottleNr - 1] = soda1;//1 måste subtraheras från flaska eftersom indexeringen hos vektorn börjar på 0
                         break;
 
                     case 2:
 
                         Soda soda2 = new Soda("Coca Cola Zero", "lightläsk", 5);
-                        sodaCrateArray[flaska - 1] = soda2;
+                        sodaCrateArray[bottleNr - 1] = soda2;
                         break;
 
 
                     case 3:
                         Soda soda3 = new Soda("Hallonsoda", "läsk", 6);
-                        sodaCrateArray[flaska - 1] = soda3;
+                        sodaCrateArray[bottleNr - 1] = soda3;
                         break;
 
 
                     case 4:
                         Soda soda4 = new Soda("Sockerdricka", "läsk", 4);
-                        sodaCrateArray[flaska - 1] = soda4;
+                        sodaCrateArray[bottleNr - 1] = soda4;
                         break;
 
                     case 5:
                         Soda soda5 = new Soda("Fanta", "läsk", 5);
-                        sodaCrateArray[flaska - 1] = soda5;
+                        sodaCrateArray[bottleNr - 1] = soda5;
                         break;
 
                     case 6:
                         Soda soda6 = new Soda("Grappo", "läsk", 5);
-                        sodaCrateArray[flaska - 1] = soda6;
+                        sodaCrateArray[bottleNr - 1] = soda6;
                         break;
 
                     case 7:
                         Soda soda7 = new Soda("Ramlösa", "mineralvatten", 4);
-                        sodaCrateArray[flaska - 1] = soda7;
+                        sodaCrateArray[bottleNr - 1] = soda7;
                         break;
 
                     case 8:
                         Soda soda8 = new Soda("Loka citron", "mineralvatten", 4);
-                        sodaCrateArray[flaska - 1] = soda8;
+                        sodaCrateArray[bottleNr - 1] = soda8;
                         break;
 
                     case 9:
                         Soda soda9 = new Soda("Norrlands Guld", "öl", 6);
-                        sodaCrateArray[flaska - 1] = soda9;
+                        sodaCrateArray[bottleNr - 1] = soda9;
                         break;
 
                     case 10:
                         Soda soda10 = new Soda("Pripps blå", "öl", 6);
-                        sodaCrateArray[flaska - 1] = soda10;
+                        sodaCrateArray[bottleNr - 1] = soda10;
                         break;
 
                 }
