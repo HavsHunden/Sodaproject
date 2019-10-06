@@ -21,7 +21,6 @@ namespace Sodaproject
             
             do
             {
-               
                 //Här ligger en meny i vilken användaren matar in en int. 
                 Console.WriteLine("Välkommen till läskbackssimulatorn! Gör ett val:");
                 Console.WriteLine("[1] Lägg till läsk");
@@ -63,7 +62,6 @@ namespace Sodaproject
                         Console.WriteLine("Programmet avslutas.");
                         break;
 
-
                 }
             }
             while (menyval != 5); // Så länge användaren inte trycker 5, körs loopen
@@ -99,9 +97,9 @@ namespace Sodaproject
                     switch (läskval)
                     {
                         case 1:
-                        Soda soda1 = new Soda("Coca Cola", "läsk", 5);
-                        sodaCrateArray[i] = soda1;
-                        Console.WriteLine("Du lade till " + soda1.GetNamn());
+                        Soda soda1 = new Soda("Coca Cola", "läsk", 5);//Här skapas objekt av Soda, med namn, pris och dryckestyp.
+                        sodaCrateArray[i] = soda1;//här anges att den valda drycken läggs i den befintliga positionen i vektorn.
+                        Console.WriteLine("Du lade till " + soda1.GetNamn());//en utskrift av läsken fås genom anrop av metoden i Soda.
                         break;
 
                         case 2:
@@ -307,9 +305,6 @@ namespace Sodaproject
                 Console.ReadKey();
             }
 
-
-            
-
         }
 
         public void calc_total()
@@ -351,8 +346,10 @@ namespace Sodaproject
 
     class Soda
     {
-
+        //Klass för läskflaskorna som ju SodaCrateArray kan innehålla objekt av.
         //här ska vi ha en konstruktor för var och en av variablerna
+
+        //variabler för namn, dryckestyp och pris deklareras
         private string namn;
         private string dryckestyp;
         private int pris;
@@ -386,7 +383,6 @@ namespace Sodaproject
         {
             //Skapar ett objekt av klassen Sodacrate som heter sodacrate
             var sodacrate = new Sodacrate();
-
 
             sodacrate.Run();
             Console.Write("Press any key to continue . . . ");
