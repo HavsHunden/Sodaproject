@@ -15,10 +15,25 @@ namespace Sodaproject
 
     class Sodacrate
     {
+
+        private List<Soda> availableSodas;
         private Soda[] flaskor = new Soda[24];
         public int antal_flaskor = 0; //Håller reda på antal flaskor
 
        
+        public Sodacrate()
+        {
+            availableSodas = new List<Soda>();
+            Soda soda1 = new Soda("Coca Cola", "läsk", 5);
+            availableSodas.Add(soda1);
+            Soda soda2 = new Soda("Coca Cola Zero", "lightläsk", 5);
+            availableSodas.Add(soda2);
+            Soda soda3 = new Soda("Hallonsoda", "läsk", 6);
+            availableSodas.Add(soda3);
+            Soda soda4 = new Soda("Ramlösa", "mineralvatten", 4);
+            availableSodas.Add(soda4);
+
+        }
 
         public void Run()
         {
@@ -67,59 +82,52 @@ namespace Sodaproject
             
 
             Console.Clear();
-            //Namnet från listan skrivs ut för vardera läsk
             Console.WriteLine("Fyll din läskback med 25 läskflaskor. Välj en läsk åt gången:");
-            Console.WriteLine("[1] Coca cola, 5 kr");
-            Console.WriteLine("[2] Coca Cola Zero, 5 kr");
-            Console.WriteLine("[3] Hallonsoda, 6 kr");
-            Console.WriteLine("[4] Ramlösa, 4 kr" );
-            //+ ett val för att slumpa läsk
 
-           
+            //Läskalternativen synliga för användaren genereras med hjälp av availableSodas. 
 
-            //Det användaren skriver in är en siffra som nu ska kopplas till en dryck
-            //om läskval = 1 ska soda1 läggas i sodacrate-vektorn
-            //kan man ha en viss siffra som egenskap och lägga i klassen soda?
+            for (int i = 0; i < availableSodas.Count; i++)
+            {
+                Console.WriteLine("[" + (i+1) +"] "+ availableSodas[i].GetNamn()+ ", "+ availableSodas[i].GetPris()+ " kr");
+            }
 
-            //Vi går igenom läskbacken och lägger till en soda i varje position
+            Console.WriteLine("[0] Avbryt");
+
+
+            //Användaren får nu skriva in värden för att välja läsk
+
+            //Vi går igenom läskbacken och lägger till en soda i varje position. Varje soda är en sorts kopia av rätt sorts soda i availableSodas.
+
             for (int i = 0; i < 24; i++)
             {
 
                 //användaren skriver in ett nummer som sparas som int
-                string str1 = Console.ReadLine(); 
-                int läskval = Convert.ToInt32(str1);
-                
-                //beroende på numret på läskval läggs ett objekt av soda in i läskbacken
-                switch (läskval)
+                string str1 = Console.ReadLine();
+
+
+                //if (str1 == "0")
+                //{
+                //    break;
+                //}
+
+                if (str1 != "")
                 {
-                    case 1:
+                    int läskval = Convert.ToInt32(str1) - 1;
 
-                    Soda soda1 = new Soda("Coca Cola", "läsk", 5);
-                    flaskor [i] = soda1; 
-                    break;
+                    //beroende på numret på läskval läggs ett objekt av soda in i läskbacken
 
-                    case 2:
-                   
-                    Soda soda2 = new Soda("Coca Cola Zero", "lightläsk", 5);
-                    flaskor[i] = soda2;
-                    break;
+                    Soda newSoda = new Soda(availableSodas[läskval].GetNamn(), availableSodas[läskval].GetDryckestyp(), availableSodas[läskval].GetPris());
 
+                    flaskor[i] = newSoda;
 
-                    case 3:
-                    Soda soda3 = new Soda("Hallonsoda", "läsk", 6);
-                    flaskor[i] = soda3;
-                    break;
-
-
-                    case 4:
-                    Soda soda4 = new Soda("Ramlösa", "mineralvatten", 4);
-                    flaskor[i] = soda4;
-                    break;
-
+                    Console.WriteLine(flaskor[i].GetNamn());
+                }
+                else
+                {
+                    Console.WriteLine("Välj läsk genom att skriva en siffra, 1-" + (availableSodas.Count)+".");
+                    i--;
                 }
 
-
-                
             }
 
         }
