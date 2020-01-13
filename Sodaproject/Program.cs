@@ -6,6 +6,13 @@ using System.Threading.Tasks;
 
 namespace Sodaproject
 {
+
+
+
+    /// <summary>
+    /// test
+    /// </summary>
+
     class Sodacrate
     {
         private Soda[] flaskor = new Soda[24];
