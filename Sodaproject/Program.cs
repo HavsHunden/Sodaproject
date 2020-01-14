@@ -47,6 +47,7 @@ namespace Sodaproject
                 Console.WriteLine("[2] Skriv ut innehåll");
                 Console.WriteLine("[3] Beräkna pris");
                 Console.WriteLine("[4] Avsluta");
+                Console.WriteLine("[5] Sortera");
 
                 //jag vill att den här menyn försvinner när en metod körs
 
@@ -59,7 +60,7 @@ namespace Sodaproject
                     case 1:
                         //metoden add-soda anropas
                         add_soda();
-                        Console.WriteLine(flaskor[3].GetNamn());
+                        //Console.WriteLine(flaskor[3].GetNamn());
                         break;
 
                     case 2:
@@ -70,6 +71,9 @@ namespace Sodaproject
                         break;
                     case 4:
                         //gå till metod
+                        break;
+                    case 5:
+                        sort_sodas();
                         break;
 
                 }
@@ -92,6 +96,7 @@ namespace Sodaproject
             }
 
             Console.WriteLine("[0] Avbryt");
+            Console.WriteLine("[99] Slumpa alla");
 
 
             //Användaren får nu skriva in värden för att välja läsk
@@ -100,19 +105,36 @@ namespace Sodaproject
 
             for (int i = 0; i < 24; i++)
             {
+                int läskval;
 
                 //användaren skriver in ett nummer som sparas som int
                 string str1 = Console.ReadLine();
 
 
-                //if (str1 == "0")
-                //{
-                //    break;
-                //}
+                if (str1 == "0")
+                {
+                    break;
+                }
+
+                if (str1 == "99")
+                {
+                    Random rand = new Random();
+
+                    for (int j = 0; j < 24; j++)
+                    {
+                        läskval = rand.Next(availableSodas.Count);
+                        Soda newSoda = new Soda(availableSodas[läskval].GetNamn(), availableSodas[läskval].GetDryckestyp(), availableSodas[läskval].GetPris());
+
+                        flaskor[j] = newSoda;
+                        Console.WriteLine(flaskor[j].GetNamn());
+                    }
+                    break;
+                    
+                }
 
                 if (str1 != "")
                 {
-                    int läskval = Convert.ToInt32(str1) - 1;
+                    läskval = Convert.ToInt32(str1) - 1;
 
                     //beroende på numret på läskval läggs ett objekt av soda in i läskbacken
 
@@ -127,20 +149,22 @@ namespace Sodaproject
                     Console.WriteLine("Välj läsk genom att skriva en siffra, 1-" + (availableSodas.Count)+".");
                     i--;
                 }
-
             }
-
         }
-
-
-        
 
         public void print_crate()
         {
             Console.Clear();
             for (int i = 0; i < 24; i++)
             {
-                Console.WriteLine(flaskor[i].GetNamn());
+                if (flaskor[i] == null)
+                {
+
+                }
+                else
+                {
+                    Console.WriteLine(flaskor[i].GetNamn());
+                }
 
             }
         }
@@ -168,6 +192,26 @@ namespace Sodaproject
             //Man ska kunna sortera vektorn med flaskor och med bubble sort
             //Det är mycket svårt att sortera efter bokstavsordning - är inte flaskorna egna objekt utan bara strängar...
             //... går det bra att sortera efter längden på namnet istället. 
+
+            for (int j = 0; j < flaskor.Length - 1; j++)
+            {
+                for (int i = 0; i < flaskor.Length - 1; i++)
+                {
+                    Console.WriteLine(flaskor[i].GetNamn() + flaskor[i + 1].GetNamn());
+
+                    if (flaskor[i].GetNamn().Length > flaskor[i + 1].GetNamn().Length)
+                    {
+                        Soda tempflaska = flaskor[i + 1];
+                        flaskor[i + 1] = flaskor[i];
+                        flaskor[i] = tempflaska;
+
+                    }
+                }
+
+                print_crate();
+
+                System.Threading.Thread.Sleep(5);
+            }
         }
 
     }
