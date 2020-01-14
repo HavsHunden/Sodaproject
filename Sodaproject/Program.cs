@@ -37,7 +37,8 @@ namespace Sodaproject
 
         public void Run()
         {
-              Console.Clear();
+            Console.Clear();
+            bool end = false;
             do
             {
               
@@ -46,8 +47,8 @@ namespace Sodaproject
                 Console.WriteLine("[1] Lägg till läsk");
                 Console.WriteLine("[2] Skriv ut innehåll");
                 Console.WriteLine("[3] Beräkna pris");
-                Console.WriteLine("[4] Avsluta");
-                Console.WriteLine("[5] Sortera");
+                Console.WriteLine("[4] Sortera");
+                Console.WriteLine("[5] Avsluta");
 
                 //jag vill att den här menyn försvinner när en metod körs
 
@@ -60,25 +61,25 @@ namespace Sodaproject
                     case 1:
                         //metoden add-soda anropas
                         add_soda();
-                        //Console.WriteLine(flaskor[3].GetNamn());
+                        Console.WriteLine(antal_flaskor);
                         break;
 
                     case 2:
                         print_crate();
                         break;
                     case 3:
-                        //gå till metod
+                        Console.WriteLine("Hela backen kostar " + calc_total());
                         break;
                     case 4:
-                        //gå till metod
+                        sort_sodas();
                         break;
                     case 5:
-                        sort_sodas();
+                        end = true;
                         break;
 
                 }
             }
-            while (antal_flaskor < 24);
+            while (end == false);
         }
 
         public void add_soda()
@@ -171,7 +172,17 @@ namespace Sodaproject
 
         public int calc_total()
         {
-            return 1;
+            int total = 0;
+
+            for (int i = 0; i < flaskor.Length; i++)
+            {
+                if (flaskor[i] != null)
+                {
+                    total = total + flaskor[i].GetPris();
+                }
+            }
+
+            return total;
 
             //kod här
             //Tänk på att inte räkna med tomma positioner i vektorn
@@ -183,6 +194,8 @@ namespace Sodaproject
             //Beskrivs i läroboken på sidan 147 och framåt (kodexempel på sidan 149)
             //Man ska kunna söka efter ett namn
             //Man kan använda string-metoderna ToLower() eller ToUpper() 
+
+
         }
 
         public void sort_sodas()
@@ -212,6 +225,11 @@ namespace Sodaproject
 
                 System.Threading.Thread.Sleep(5);
             }
+        }
+
+        public void exit()
+        {
+
         }
 
     }
